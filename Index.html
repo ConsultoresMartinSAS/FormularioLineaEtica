@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Línea Ética | Consultores Martín</title>
+
+  <style>
+    :root {
+      --verde: #0f5c4a;
+      --verde-oscuro: #083d32;
+      --naranja: #f28c28;
+      --salmon: #f4a28c;
+      --gris: #f5f7f6;
+      --texto: #263238;
+      --borde: #d9e2df;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--gris);
+      color: var(--texto);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 180px;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 15px auto 0;
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .notice {
+      background: #fff7f2;
+      border-left: 5px solid var(--naranja);
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 18px 22px;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    form {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 25px;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid var(--borde);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: var(--verde);
+      border-bottom: 2px solid var(--salmon);
+      padding-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    label.required::after {
+      content: " *";
+      color: #c0392b;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 12px;
+      border: 1px solid var(--borde);
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      background: white;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 2px rgba(242, 140, 40, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 180px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .privacy-text {
+      background: #f9fbfa;
+      border: 1px solid var(--borde);
+      padding: 15px;
+      border-radius: 8px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .alert {
+      background: #fdecea;
+      border-left: 5px solid #c0392b;
+      color: #922b21;
+      padding: 14px;
+      border-radius: 8px;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #607d75;
+      margin-top: 5px;
+    }
+
+    button {
+      background: var(--verde);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: var(--verde-oscuro);
+    }
+
+    button:disabled {
+      background: #9e9e9e;
+      cursor: not-allowed;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <!-- Cambia esta ruta por la de tu logo -->
+  <img src="logo.png" alt="Consultores Martín">
+  <h1>Línea Ética</h1>
+  <p>
+    Este canal ha sido dispuesto para reportar situaciones relacionadas con posibles conductas contrarias
+    a la ética, la transparencia, la integridad corporativa o el Programa de Transparencia y Ética Empresarial.
+  </p>
+</header>
+
+<div class="notice">
+  <strong>Confidencialidad y no represalias:</strong>
+  La información suministrada será tratada de manera confidencial. La compañía no permitirá represalias
+  contra quienes reporten de buena fe situaciones éticas, conforme a los lineamientos establecidos en el
+  Manual del Programa de Transparencia y Ética Empresarial.
+</div>
+
+<form id="lineaEticaForm">
+
+  <!-- SECCIÓN 1 -->
+  <section>
+    <h2>1. Datos del reportante</h2>
+
+    <div class="grid">
+      <div class="field">
+        <label class="required">Nombres y apellidos</label>
+        <input type="text" name="nombres_apellidos" required>
+      </div>
+
+      <div class="field">
+        <label class="required">Correo electrónico</label>
+        <input type="email" name="correo_electronico" required>
+      </div>
+
+      <div class="field">
+        <label class="required">Tipo de relación contractual</label>
+        <select name="relacion_contractual" id="relacionContractual" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Accionista</option>
+          <option>Cliente</option>
+          <option>Funcionario</option>
+          <option>Intermediario</option>
+          <option>Proveedor</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field hidden" id="campoTipoContraparte">
+        <label class="required" id="labelTipoContraparte">Indique el tipo de contraparte</label>
+        <input type="text" name="tipo_contraparte" id="tipoContraparte">
+      </div>
+
+      <div class="field">
+        <label class="required">Número de veces que ha reportado la situación ética</label>
+        <select name="veces_reportado" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Primera vez</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5 veces o más</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2 -->
+  <section>
+    <h2>2. Datos de la situación a reportar</h2>
+
+    <div class="grid">
+      <div class="field">
+        <label class="required">Tipo de situación</label>
+        <select name="tipo_situacion" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Interna</option>
+          <option>Externa</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="required">Fecha en que sucedió la situación ética</label>
+        <input type="date" name="fecha_situacion" id="fechaSituacion" required>
+      </div>
+
+      <div class="field full">
+        <label class="required">Indique el motivo de la situación ética presentada</label>
+        <select name="motivo_situacion" id="motivoSituacion" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Adulteración o falsificación de documentos privados o públicos</option>
+          <option>Apropiación o uso indebido de los activos de la compañía</option>
+          <option>Conductas persistentes de discriminación y acoso laboral</option>
+          <option>Conflicto de interés</option>
+          <option>Contribución política</option>
+          <option>Estafa</option>
+          <option>Extralimitación de gastos y viáticos</option>
+          <option>Fraude</option>
+          <option>Identificación de riesgos de corrupción y soborno transnacional</option>
+          <option>Participación en actividades, negocios u operaciones contrarias a la ley</option>
+          <option>Soborno</option>
+          <option>Soborno transnacional</option>
+          <option>Tráfico de influencias</option>
+          <option>Uso indebido de información confidencial</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field full hidden" id="campoOtroMotivo">
+        <label class="required">Indique cuál es el otro motivo</label>
+        <input type="text" name="otro_motivo" id="otroMotivo">
+      </div>
+
+      <div class="field full">
+        <label class="required">
+          Descripción general de su denuncia. Entre más detalle nos proporcione, podremos realizar una mejor gestión
+        </label>
+        <textarea name="descripcion_denuncia" required></textarea>
+      </div>
+
+      <div class="field full">
+        <label class="required">¿Cómo se enteró de la situación ética?</label>
+        <select name="como_se_entero" id="comoSeEntero" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Me ocurrió a mí</option>
+          <option>Lo observé presencialmente</option>
+          <option>Lo escuché por casualidad</option>
+          <option>Me lo dijo un funcionario</option>
+          <option>Me lo dijo alguien fuera de la empresa</option>
+          <option>Encontré accidentalmente información de un archivo o documento</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field full hidden" id="campoOtroEntero">
+        <label class="required">Indique cómo se enteró de la situación ética</label>
+        <input type="text" name="otro_como_se_entero" id="otroComoSeEntero">
+      </div>
+
+      <div class="field">
+        <label class="required">¿Considera que el evento denunciado tiene impacto financiero en la compañía?</label>
+        <select name="impacto_financiero" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="required">¿Tiene conocimiento si al día de hoy se continúa presentando la situación?</label>
+        <select name="situacion_continua" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3 -->
+  <section>
+    <h2>3. Datos del tercero que realizó la situación ética</h2>
+
+    <div class="grid">
+      <div class="field">
+        <label class="required">¿Conoce el nombre de la persona a denunciar?</label>
+        <select name="conoce_denunciado" id="conoceDenunciado" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="field hidden datos-denunciado">
+        <label class="required">Nombres y apellidos</label>
+        <input type="text" name="nombre_denunciado" id="nombreDenunciado">
+      </div>
+
+      <div class="field hidden datos-denunciado">
+        <label class="required">Cargo que ocupa</label>
+        <input type="text" name="cargo_denunciado" id="cargoDenunciado">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4 -->
+  <section>
+    <h2>4. Términos y privacidad</h2>
+
+    <div class="privacy-text">
+      De acuerdo con la política de tratamiento de datos de la compañía, al marcar la opción
+      <strong>“Sí”</strong>, usted autoriza el tratamiento de los datos consignados en el presente formulario.
+      Al marcar la opción <strong>“No”</strong>, no podemos realizar el tratamiento de la información,
+      debido a que no contamos con su autorización.
+    </div>
+
+    <div class="grid">
+      <div class="field">
+        <label class="required">¿Autoriza el tratamiento de sus datos personales?</label>
+        <select name="autoriza_datos" id="autorizaDatos" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="alert" id="alertaPrivacidad">
+      De acuerdo con que no autorizó el tratamiento de datos personales, no podemos realizar el tratamiento
+      de la información registrada en la denuncia.
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5 -->
+  <section>
+    <h2>5. Anexos</h2>
+
+    <div class="grid">
+      <div class="field">
+        <label class="required">¿Cuenta con evidencias?</label>
+        <select name="cuenta_evidencias" id="cuentaEvidencias" required>
+          <option value="" selected hidden>Seleccione una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="field full hidden" id="campoAnexos">
+        <label class="required">Cargue los documentos soporte</label>
+        <input
+          type="file"
+          name="anexos"
+          id="anexos"
+          multiple
+          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+        >
+        <span class="hint">
+          Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS y XLSX. Tamaño máximo por archivo: 10 MB.
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button type="submit" id="btnEnviar">Enviar reporte</button>
+  </div>
+
+</form>
+
+<script>
+  const relacionContractual = document.getElementById("relacionContractual");
+  const campoTipoContraparte = document.getElementById("campoTipoContraparte");
+  const tipoContraparte = document.getElementById("tipoContraparte");
+  const labelTipoContraparte = document.getElementById("labelTipoContraparte");
+
+  const motivoSituacion = document.getElementById("motivoSituacion");
+  const campoOtroMotivo = document.getElementById("campoOtroMotivo");
+  const otroMotivo = document.getElementById("otroMotivo");
+
+  const comoSeEntero = document.getElementById("comoSeEntero");
+  const campoOtroEntero = document.getElementById("campoOtroEntero");
+  const otroComoSeEntero = document.getElementById("otroComoSeEntero");
+
+  const conoceDenunciado = document.getElementById("conoceDenunciado");
+  const datosDenunciado = document.querySelectorAll(".datos-denunciado");
+  const nombreDenunciado = document.getElementById("nombreDenunciado");
+  const cargoDenunciado = document.getElementById("cargoDenunciado");
+
+  const autorizaDatos = document.getElementById("autorizaDatos");
+  const alertaPrivacidad = document.getElementById("alertaPrivacidad");
+  const btnEnviar = document.getElementById("btnEnviar");
+
+  const cuentaEvidencias = document.getElementById("cuentaEvidencias");
+  const campoAnexos = document.getElementById("campoAnexos");
+  const anexos = document.getElementById("anexos");
+
+  const fechaSituacion = document.getElementById("fechaSituacion");
+
+  // Evita fechas futuras
+  const hoy = new Date().toISOString().split("T")[0];
+  fechaSituacion.setAttribute("max", hoy);
+
+  // Relación contractual
+  relacionContractual.addEventListener("change", function () {
+    if (this.value === "Proveedor" || this.value === "Otro") {
+      campoTipoContraparte.classList.remove("hidden");
+      tipoContraparte.required = true;
+
+      labelTipoContraparte.textContent =
+        this.value === "Proveedor"
+          ? "Indique el tipo de proveedor o contraparte"
+          : "Indique cuál es la otra relación contractual";
+    } else {
+      campoTipoContraparte.classList.add("hidden");
+      tipoContraparte.required = false;
+      tipoContraparte.value = "";
+    }
+  });
+
+  // Otro motivo
+  motivoSituacion.addEventListener("change", function () {
+    if (this.value === "Otro") {
+      campoOtroMotivo.classList.remove("hidden");
+      otroMotivo.required = true;
+    } else {
+      campoOtroMotivo.classList.add("hidden");
+      otroMotivo.required = false;
+      otroMotivo.value = "";
+    }
+  });
+
+  // Otro cómo se enteró
+  comoSeEntero.addEventListener("change", function () {
+    if (this.value === "Otro") {
+      campoOtroEntero.classList.remove("hidden");
+      otroComoSeEntero.required = true;
+    } else {
+      campoOtroEntero.classList.add("hidden");
+      otroComoSeEntero.required = false;
+      otroComoSeEntero.value = "";
+    }
+  });
+
+  // Datos del denunciado
+  conoceDenunciado.addEventListener("change", function () {
+    if (this.value === "Sí") {
+      datosDenunciado.forEach(campo => campo.classList.remove("hidden"));
+      nombreDenunciado.required = true;
+      cargoDenunciado.required = true;
+    } else {
+      datosDenunciado.forEach(campo => campo.classList.add("hidden"));
+      nombreDenunciado.required = false;
+      cargoDenunciado.required = false;
+      nombreDenunciado.value = "";
+      cargoDenunciado.value = "";
+    }
+  });
+
+  // Tratamiento de datos
+  autorizaDatos.addEventListener("change", function () {
+    if (this.value === "No") {
+      alertaPrivacidad.style.display = "block";
+      btnEnviar.disabled = true;
+    } else {
+      alertaPrivacidad.style.display = "none";
+      btnEnviar.disabled = false;
+    }
+  });
+
+  // Evidencias
+  cuentaEvidencias.addEventListener("change", function () {
+    if (this.value === "Sí") {
+      campoAnexos.classList.remove("hidden");
+      anexos.required = true;
+    } else {
+      campoAnexos.classList.add("hidden");
+      anexos.required = false;
+      anexos.value = "";
+    }
+  });
+
+  // Validación de tamaño máximo por archivo: 10 MB
+  anexos.addEventListener("change", function () {
+    const maxSize = 10 * 1024 * 1024;
+
+    for (const archivo of this.files) {
+      if (archivo.size > maxSize) {
+        alert(`El archivo "${archivo.name}" supera el tamaño máximo permitido de 10 MB.`);
+        this.value = "";
+        break;
+      }
+    }
+  });
+
+  // Envío del formulario
+  document.getElementById("lineaEticaForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (autorizaDatos.value === "No") {
+      alert("No es posible enviar el reporte porque no autorizó el tratamiento de datos personales.");
+      return;
+    }
+
+    alert("Reporte enviado correctamente.");
+    
+    // Aquí puedes conectar el formulario con Google Apps Script, backend, correo o base de datos.
+    // this.submit();
+  });
+</script>
+
+</body>
+</html>
