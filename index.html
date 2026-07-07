@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Línea Ética | Consultores Martín S.A.S.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul: #19313B;
+      --salmon: #CB896C;
+      --petalo: #F4E9E2;
+      --blanco: #ffffff;
+      --gris: #f7f7f7;
+      --borde: #dedede;
+      --texto: #19313B;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--texto);
+    }
+
+    .page {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 35px;
+    }
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding: 28px 0 18px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .top-header img {
+      width: 145px;
+      height: auto;
+    }
+
+    .brand-title h1 {
+      margin: 0;
+      color: var(--azul);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand-title p {
+      margin: 4px 0 0;
+      color: #7b8589;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .intro-card {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      margin-top: 22px;
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 0 0 24px 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(25, 49, 59, 0.08);
+    }
+
+    .intro-main {
+      padding: 28px;
+      border-right: 3px solid var(--salmon);
+    }
+
+    .intro-main h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--azul);
+    }
+
+    .intro-main p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .intro-note {
+      background: var(--petalo);
+      padding: 24px;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .no-represalias {
+      margin-top: 18px;
+      background: var(--petalo);
+      border-left: 6px solid var(--salmon);
+      padding: 16px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .form-card {
+      margin-top: 26px;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--blanco);
+      box-shadow: 0 8px 20px rgba(25, 49, 59, 0.06);
+    }
+
+    .section-title {
+      background: var(--azul);
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    .section-number {
+      background: var(--salmon);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .section-body {
+      padding: 24px;
+    }
+
+    .grid{
+    display:grid;
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    gap:22px 24px;
+}
+    .field,
+    .field-1,
+    .field-2,
+    .field-3,
+    .field-4,
+    .field-5,
+    .field-6,
+    .field-7,
+    .field-8,
+    .field-9,
+    .field-10,
+    .field-11,
+    .field-12 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-1 { grid-column: span 1; }
+    .field-2 { grid-column: span 2; }
+    .field-3 { grid-column: span 3; }
+    .field-4 { grid-column: span 4; }
+    .field-5 { grid-column: span 5; }
+    .field-6 { grid-column: span 6; }
+    .field-7 { grid-column: span 7; }
+    .field-8 { grid-column: span 8; }
+    .field-9 { grid-column: span 9; }
+    .field-10 { grid-column: span 10; }
+    .field-11 { grid-column: span 11; }
+    .field-12 { grid-column: span 12; }
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--azul);
+      min-height: 38px;
+      display: flex;
+      align-items: flex-end;
+      line-height: 1.25;
+    }
+
+    label.required::after {
+      content: " *";
+      color: var(--salmon);
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 0 16px;
+      min-height: 54px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--azul);
+      background: white;
+      outline: none;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="file"] {
+    width: 100%;
+    height: 54px;
+    padding: 8px 16px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    }
+
+    input[type="file"]::file-selector-button {
+    height: 36px;
+    margin-right: 12px;
+    padding: 0 14px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--petalo);
+    color: var(--azul);
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    }
+
+    .upload-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .upload-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .upload-row input[type="file"] {
+      margin: 0;
+    }
+
+    .btn-add-file,
+    .btn-remove-file {
+      min-height: 42px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: none;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+      padding: 0 16px;
+    }
+
+    .btn-add-file {
+      margin-top: 10px;
+      width: fit-content;
+      background: var(--azul);
+      color: white;
+    }
+
+    .btn-remove-file {
+      background: var(--petalo);
+      color: var(--azul);
+      border: 1px solid var(--borde);
+    }
+
+    .anexos-field {
+      align-self: start;
+    }
+
+
+    textarea {
+      min-height: 185px;
+      padding: 16px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8a9498;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--salmon);
+      box-shadow: 0 0 0 3px rgba(203, 137, 108, 0.18);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .privacy-box {
+      grid-column: span 8;
+      background: #ffffff;
+      border-right: 1px solid var(--borde);
+      padding-right: 28px;
+      line-height: 1.55;
+      font-size: 14px;
+      display: block;
+      align-self: center;
+    }
+
+    .privacy-box p {
+      margin: 0;
+    }
+
+    .privacy-select {
+      grid-column: span 4;
+      align-self: center;
+    }
+
+    .alert {
+      margin-top: 18px;
+      display: none;
+      background: var(--petalo);
+      border-left: 6px solid var(--salmon);
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hint {
+      margin-top: 7px;
+      font-size: 12px;
+      color: #6d777b;
+      line-height: 1.4;
+    }
+
+    .actions {
+      text-align: center;
+      margin: 28px 0 10px;
+    }
+
+    button {
+      background: var(--azul);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 16px 42px;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      box-shadow: 0 8px 18px rgba(25, 49, 59, 0.25);
+    }
+
+    button:hover {
+      background: #0f252e;
+    }
+
+    button:disabled {
+      background: #9fa7aa;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .footer-bar {
+      width: 100%;
+      height: 18px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      margin-top: 30px;
+    }
+
+    .footer-bar div:nth-child(1) {
+      background: var(--azul);
+    }
+
+    .footer-bar div:nth-child(2) {
+      background: var(--salmon);
+    }
+
+    .footer-bar div:nth-child(3) {
+      background: var(--petalo);
+    }
+
+    .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 49, 59, 0.45);
+  backdrop-filter: blur(7px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  width: 92%;
+  max-width: 410px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(25, 49, 59, 0.25);
+  border: 1px solid var(--petalo);
+}
+
+.modal-logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.modal-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--azul);
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 auto 18px;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 14px;
+  color: #6d777b;
+  margin-bottom: 18px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eeeeee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--azul);
+  animation: cargarEnvio 2.2s forwards;
+}
+
+@keyframes cargarEnvio {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.radicado-box {
+  background: var(--petalo);
+  border-left: 5px solid var(--salmon);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 18px 0;
+  color: var(--azul);
+  font-weight: 800;
+}
+
+.radicado-box small {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #7b8589;
+  margin-bottom: 4px;
+}
+
+.modal-btn {
+  width: 100%;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+    @media (max-width: 900px) {
+      .intro-card {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-main {
+        border-right: none;
+        border-bottom: 3px solid var(--salmon);
+      }
+
+      .grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .field,
+      .field-1,
+      .field-2,
+      .field-3,
+      .field-4,
+      .field-5,
+      .field-6,
+      .field-7,
+      .field-8,
+      .field-9,
+      .field-10,
+      .field-11,
+      .field-12,
+      .privacy-box,
+      .privacy-select {
+        grid-column: 1 / -1;
+      }
+
+      .privacy-box {
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+        padding-right: 0;
+        padding-bottom: 18px;
+      }
+
+      .upload-row {
+        grid-template-columns: 1fr;
+      }
+
+      .span-2 {
+        grid-column: 1 / -1;
+      }
+
+      .top-header {
+        align-items: flex-start;
+      }
+
+      .top-header img {
+        width: 115px;
+      }
+
+      .brand-title h1 {
+        font-size: 22px;
+      }
+
+      .intro-main h2 {
+        font-size: 26px;
+      }
+    }
+
+</style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="top-header">
+      <img src="Logo.png" alt="Logo Consultores Martín S.A.S.">
+      <div class="brand-title">
+        <h1>CONSULTORES MARTÍN S.A.S.</h1>
+        <p>Línea Ética</p>
+      </div>
+    </header>
+
+    <div class="intro-card">
+      <div class="intro-main">
+        <h2>LÍNEA ÉTICA</h2>
+        <p>
+          Este canal ha sido dispuesto para reportar situaciones relacionadas con posibles conductas
+          contrarias a la ética, la transparencia, la integridad corporativa o el Programa de Transparencia
+          y Ética Empresarial.
+        </p>
+
+        <div class="no-represalias">
+          <strong>Confidencialidad y no represalias:</strong>
+          La información suministrada será tratada de manera confidencial. La compañía no permitirá
+          represalias contra quienes reporten de buena fe situaciones éticas, conforme a los lineamientos
+          establecidos en el Manual del Programa de Transparencia y Ética Empresarial.
+        </div>
+      </div>
+
+      <div class="intro-note">
+        <strong>Nota:</strong> Los campos marcados con asterisco (*) son obligatorios. La información será
+        utilizada para el análisis, gestión y seguimiento de la situación reportada.
+      </div>
+    </div>
+
+    <form id="lineaEticaForm">
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="section-number">1</span>
+          Datos del reportante
+        </div>
+
+        <div class="section-body">
+          <div class="grid">
+            <div class="field field-12">
+  <label class="required">¿Desea suministrar sus datos de contacto?</label>
+  <select name="suministra_datos_reportante" id="suministraDatosReportante" required>
+    <option value="" selected hidden>Seleccione una opción</option>
+    <option>Sí</option>
+    <option>No</option>
+  </select>
+</div>
+
+<div class="field field-6 hidden datos-reportante">
+  <label class="required">Nombres y apellidos</label>
+  <input type="text" name="nombres_apellidos" id="nombresApellidosReportante" placeholder="Ingrese sus nombres y apellidos">
+</div>
+
+<div class="field field-6 hidden datos-reportante">
+  <label class="required">Correo electrónico</label>
+  <input type="email" name="correo_electronico" id="correoElectronicoReportante" placeholder="ejemplo@correo.com">
+</div>
+
+            <div class="field field-4">
+              <label class="required">Tipo de relación contractual</label>
+              <select name="relacion_contractual" id="relacionContractual" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Accionista</option>
+                <option>Cliente</option>
+                <option>Funcionario</option>
+                <option>Intermediario</option>
+                <option>Proveedor</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="field field-4 hidden" id="campoTipoContraparte">
+              <label class="required" id="labelTipoContraparte">Tipo de contraparte</label>
+              <input type="text" name="tipo_contraparte" id="tipoContraparte" placeholder="Indique el tipo de contraparte">
+            </div>
+
+            <div class="field field-4">
+              <label class="required">Número de veces que ha reportado la situación ética</label>
+              <select name="veces_reportado" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Primera vez</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 veces o más</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="section-number">2</span>
+          Datos de la situación a reportar
+        </div>
+
+        <div class="section-body">
+          <div class="grid">
+            <div class="field field-2">
+              <label class="required">Tipo de situación</label>
+              <select name="tipo_situacion" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Interna</option>
+                <option>Externa</option>
+              </select>
+            </div>
+
+            <div class="field field-3">
+              <label class="required">Fecha en que sucedió la situación ética</label>
+              <input type="date" name="fecha_situacion" id="fechaSituacion" required>
+            </div>
+
+            <div class="field field-7">
+              <label class="required">Indique el motivo de la situación ética presentada</label>
+              <select name="motivo_situacion" id="motivoSituacion" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Adulteración o falsificación de documentos privados o públicos</option>
+                <option>Apropiación o uso indebido de los activos de la compañía</option>
+                <option>Conductas persistentes de discriminación y acoso laboral</option>
+                <option>Conflicto de interés</option>
+                <option>Contribución política</option>
+                <option>Estafa</option>
+                <option>Extralimitación de gastos y viáticos</option>
+                <option>Fraude</option>
+                <option>Identificación de riesgos de corrupción y soborno transnacional</option>
+                <option>Participación en actividades, negocios u operaciones contrarias a la ley</option>
+                <option>Soborno</option>
+                <option>Soborno transnacional</option>
+                <option>Tráfico de influencias</option>
+                <option>Uso indebido de información confidencial</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="field field-12 hidden" id="campoOtroMotivo">
+              <label class="required">Indique cuál es el otro motivo</label>
+              <input type="text" name="otro_motivo" id="otroMotivo" placeholder="Especifique el otro motivo">
+            </div>
+
+            <div class="field field-12">
+              <label class="required">
+                Descripción general de su denuncia. Entre más detalle nos proporcione, podremos realizar una mejor gestión
+              </label>
+              <textarea name="descripcion_denuncia" placeholder="Describa aquí los hechos con el mayor detalle posible: fechas, lugares, personas involucradas, situaciones, documentos o cualquier información relevante." required></textarea>
+            </div>
+
+            <div class="field field-7">
+              <label class="required">¿Cómo se enteró de la situación ética?</label>
+              <select name="como_se_entero" id="comoSeEntero" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Me ocurrió a mí</option>
+                <option>Lo observé presencialmente</option>
+                <option>Lo escuché por casualidad</option>
+                <option>Me lo dijo un funcionario</option>
+                <option>Me lo dijo alguien fuera de la empresa</option>
+                <option>Encontré accidentalmente información de un archivo o documento</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="field field-5 hidden" id="campoOtroEntero">
+              <label class="required">Indique cómo se enteró de la situación ética</label>
+              <input type="text" name="otro_como_se_entero" id="otroComoSeEntero" placeholder="Especifique cómo se enteró de la situación">
+            </div>
+
+            <div class="field field-6">
+              <label class="required">¿Considera que el evento denunciado tiene impacto financiero en la compañía?</label>
+              <select name="impacto_financiero" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field field-6">
+              <label class="required">¿Tiene conocimiento si al día de hoy se continúa presentando la situación?</label>
+              <select name="situacion_continua" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="section-number">3</span>
+          Datos del tercero que realizó la situación ética
+        </div>
+
+        <div class="section-body">
+          <div class="grid">
+            <div class="field field-4">
+              <label class="required">¿Conoce el nombre de la persona a denunciar?</label>
+              <select name="conoce_denunciado" id="conoceDenunciado" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field field-4 hidden datos-denunciado">
+              <label class="required">Nombres y apellidos</label>
+              <input type="text" name="nombre_denunciado" id="nombreDenunciado" placeholder="Ingrese nombres y apellidos">
+            </div>
+
+            <div class="field field-4 hidden datos-denunciado">
+              <label class="required">Cargo que ocupa</label>
+              <input type="text" name="cargo_denunciado" id="cargoDenunciado" placeholder="Ingrese el cargo que ocupa">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="section-number">4</span>
+          Términos y privacidad
+        </div>
+
+        <div class="section-body">
+          <div class="grid">
+            <div class="privacy-box">
+              <p>
+                De acuerdo con la política de tratamiento de datos de la compañía, al marcar la opción
+                <strong>“Sí”</strong>, usted autoriza el tratamiento de los datos consignados en el presente formulario.
+                Al marcar la opción <strong>“No”</strong>, no podemos realizar el tratamiento de la información,
+                debido a que no contamos con su autorización.
+              </p>
+            </div>
+
+            <div class="field field-4 privacy-select">
+              <label class="required">¿Autoriza el tratamiento de sus datos personales?</label>
+              <select name="autoriza_datos" id="autorizaDatos" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="alert" id="alertaPrivacidad">
+            De acuerdo con que <strong>NO</strong> autorizó el tratamiento de datos personales, no podemos tratar los datos de la denuncia.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="section-number">5</span>
+          Anexos
+        </div>
+
+        <div class="section-body">
+          <div class="grid">
+            <div class="field field-3">
+              <label class="required">¿Cuenta con evidencias?</label>
+              <select name="cuenta_evidencias" id="cuentaEvidencias" required>
+                <option value="" selected hidden>Seleccione una opción</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field field-9 hidden anexos-field" id="campoAnexos">
+              <label class="required">Cargue los documentos soporte</label>
+
+              <div class="upload-list" id="anexosContainer">
+                <div class="upload-row">
+                  <input
+                    type="file"
+                    name="anexos[]"
+                    class="anexo-input"
+                    multiple
+                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                  >
+                </div>
+              </div>
+
+              <button type="button" class="btn-add-file" id="btnAgregarAnexo">
+                Agregar otro archivo
+              </button>
+
+              <span class="hint">
+                Puede seleccionar varios archivos al mismo tiempo o agregar nuevas cargas con el botón anterior. Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS y XLSX. Tamaño máximo por archivo: 10 MB.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button type="submit" id="btnEnviar">Enviar reporte</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="footer-bar">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <script>
+    const suministraDatosReportante = document.getElementById("suministraDatosReportante");
+    const datosReportante = document.querySelectorAll(".datos-reportante");
+    const nombresApellidosReportante = document.getElementById("nombresApellidosReportante");
+    const correoElectronicoReportante = document.getElementById("correoElectronicoReportante");
+    
+    const relacionContractual = document.getElementById("relacionContractual");
+    const campoTipoContraparte = document.getElementById("campoTipoContraparte");
+    const tipoContraparte = document.getElementById("tipoContraparte");
+    const labelTipoContraparte = document.getElementById("labelTipoContraparte");
+
+    const motivoSituacion = document.getElementById("motivoSituacion");
+    const campoOtroMotivo = document.getElementById("campoOtroMotivo");
+    const otroMotivo = document.getElementById("otroMotivo");
+
+    const comoSeEntero = document.getElementById("comoSeEntero");
+    const campoOtroEntero = document.getElementById("campoOtroEntero");
+    const otroComoSeEntero = document.getElementById("otroComoSeEntero");
+
+    const conoceDenunciado = document.getElementById("conoceDenunciado");
+    const datosDenunciado = document.querySelectorAll(".datos-denunciado");
+    const nombreDenunciado = document.getElementById("nombreDenunciado");
+    const cargoDenunciado = document.getElementById("cargoDenunciado");
+
+    const autorizaDatos = document.getElementById("autorizaDatos");
+    const alertaPrivacidad = document.getElementById("alertaPrivacidad");
+    const btnEnviar = document.getElementById("btnEnviar");
+
+    const cuentaEvidencias = document.getElementById("cuentaEvidencias");
+    const campoAnexos = document.getElementById("campoAnexos");
+    const anexosContainer = document.getElementById("anexosContainer");
+    const btnAgregarAnexo = document.getElementById("btnAgregarAnexo");
+
+    const fechaSituacion = document.getElementById("fechaSituacion");
+
+    const hoy = new Date().toISOString().split("T")[0];
+    fechaSituacion.setAttribute("max", hoy);
+
+    suministraDatosReportante.addEventListener("change", function () {
+  if (this.value === "Sí") {
+    datosReportante.forEach(campo => campo.classList.remove("hidden"));
+    nombresApellidosReportante.required = true;
+    correoElectronicoReportante.required = true;
+  } else {
+    datosReportante.forEach(campo => campo.classList.add("hidden"));
+    nombresApellidosReportante.required = false;
+    correoElectronicoReportante.required = false;
+    nombresApellidosReportante.value = "";
+    correoElectronicoReportante.value = "";
+  }
+});
+
+    relacionContractual.addEventListener("change", function () {
+      if (this.value === "Proveedor" || this.value === "Otro") {
+        campoTipoContraparte.classList.remove("hidden");
+        tipoContraparte.required = true;
+
+        labelTipoContraparte.textContent =
+          this.value === "Proveedor"
+            ? "Tipo de contraparte"
+            : "Indique cuál es la otra relación contractual";
+      } else {
+        campoTipoContraparte.classList.add("hidden");
+        tipoContraparte.required = false;
+        tipoContraparte.value = "";
+      }
+    });
+
+    motivoSituacion.addEventListener("change", function () {
+      if (this.value === "Otro") {
+        campoOtroMotivo.classList.remove("hidden");
+        otroMotivo.required = true;
+      } else {
+        campoOtroMotivo.classList.add("hidden");
+        otroMotivo.required = false;
+        otroMotivo.value = "";
+      }
+    });
+
+    comoSeEntero.addEventListener("change", function () {
+      if (this.value === "Otro") {
+        campoOtroEntero.classList.remove("hidden");
+        otroComoSeEntero.required = true;
+      } else {
+        campoOtroEntero.classList.add("hidden");
+        otroComoSeEntero.required = false;
+        otroComoSeEntero.value = "";
+      }
+    });
+
+    conoceDenunciado.addEventListener("change", function () {
+      if (this.value === "Sí") {
+        datosDenunciado.forEach(campo => campo.classList.remove("hidden"));
+        nombreDenunciado.required = true;
+        cargoDenunciado.required = true;
+      } else {
+        datosDenunciado.forEach(campo => campo.classList.add("hidden"));
+        nombreDenunciado.required = false;
+        cargoDenunciado.required = false;
+        nombreDenunciado.value = "";
+        cargoDenunciado.value = "";
+      }
+    });
+
+    autorizaDatos.addEventListener("change", function () {
+      if (this.value === "No") {
+        alertaPrivacidad.style.display = "block";
+        btnEnviar.disabled = true;
+      } else {
+        alertaPrivacidad.style.display = "none";
+        btnEnviar.disabled = false;
+      }
+    });
+
+    function obtenerInputsAnexos() {
+      return anexosContainer.querySelectorAll(".anexo-input");
+    }
+
+    function actualizarRequeridosAnexos(esRequerido) {
+      obtenerInputsAnexos().forEach((input, index) => {
+        input.required = esRequerido && index === 0;
+      });
+    }
+
+    function validarTamanoArchivo(input, mostrarModal = false) {
+      const archivos = Array.from(input.files || []);
+      if (!archivos.length) return true;
+
+      const maxMB = 10;
+      const maxBytes = maxMB * 1024 * 1024;
+
+      const archivoGrande = archivos.find(archivo => archivo.size > maxBytes);
+
+      if (archivoGrande) {
+        if (mostrarModal) {
+          mostrarModalArchivoGrande(archivoGrande, maxMB);
+        }
+
+        // IMPORTANTE:
+        // No limpiamos input.value aquí para que el nombre del archivo siga visible,
+        // igual que en el formulario de vinculación.
+        // El bloqueo se hace al intentar enviar el formulario.
+        return false;
+      }
+
+      return true;
+    }
+
+    function crearFilaAnexo() {
+      const fila = document.createElement("div");
+      fila.className = "upload-row";
+
+      const nuevoInput = document.createElement("input");
+      nuevoInput.type = "file";
+      nuevoInput.name = "anexos[]";
+      nuevoInput.className = "anexo-input";
+      nuevoInput.multiple = true;
+      nuevoInput.accept = ".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx";
+
+      nuevoInput.addEventListener("change", function () {
+        validarTamanoArchivo(nuevoInput, false);
+      });
+
+const nombreArchivo = document.createElement("span");
+nombreArchivo.className = "archivo-nombre";
+nombreArchivo.textContent = "Ningún archivo seleccionado";
+
+      const btnEliminar = document.createElement("button");
+      btnEliminar.type = "button";
+      btnEliminar.className = "btn-remove-file";
+      btnEliminar.textContent = "Eliminar";
+
+      btnEliminar.addEventListener("click", function () {
+        fila.remove();
+        actualizarRequeridosAnexos(cuentaEvidencias.value === "Sí");
+      });
+
+      nuevoInput.addEventListener("change", function () {
+        validarTamanoArchivo(this, false);
+      });
+
+      fila.appendChild(nuevoInput);
+      fila.appendChild(btnEliminar);
+      anexosContainer.appendChild(fila);
+    }
+
+    cuentaEvidencias.addEventListener("change", function () {
+      if (this.value === "Sí") {
+        campoAnexos.classList.remove("hidden");
+        actualizarRequeridosAnexos(true);
+      } else {
+        campoAnexos.classList.add("hidden");
+        obtenerInputsAnexos().forEach(input => {
+          input.required = false;
+          input.value = "";
+        });
+
+        anexosContainer.querySelectorAll(".upload-row").forEach((fila, index) => {
+          if (index > 0) fila.remove();
+        });
+      }
+    });
+
+    anexosContainer.addEventListener("change", function (event) {
+      if (event.target.classList.contains("anexo-input")) {
+        validarTamanoArchivo(event.target, false);
+      }
+    });
+
+    btnAgregarAnexo.addEventListener("click", function () {
+      crearFilaAnexo();
+    });
+
+    function generarRadicadoLineaEtica() {
+  const fecha = new Date();
+  const anio = fecha.getFullYear();
+  const aleatorio = Math.floor(100000000000 + Math.random() * 900000000000);
+  return `LE-${anio}-${aleatorio}`;
+}
+
+const API_LINEA_ETICA_URL = "https://stbqn11h0k.execute-api.us-east-2.amazonaws.com/reportes";
+let envioExitosoLineaEtica = false;
+
+function obtenerValorFormulario(formData, nombreCampo) {
+  return (formData.get(nombreCampo) || "").toString().trim();
+}
+
+function archivoABase64(archivo) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const resultado = reader.result || "";
+      const contenidoBase64 = resultado.toString().split(",")[1] || "";
+
+      resolve({
+        nombre: archivo.name,
+        tipo: archivo.type || "application/octet-stream",
+        contenidoBase64
+      });
+    };
+
+    reader.onerror = () => reject(new Error(`No fue posible leer el archivo ${archivo.name}`));
+    reader.readAsDataURL(archivo);
+  });
+}
+
+async function obtenerArchivosFormulario() {
+  const archivos = [];
+  const inputs = obtenerInputsAnexos();
+
+  for (const input of inputs) {
+    for (const archivo of input.files) {
+      archivos.push(await archivoABase64(archivo));
+    }
+  }
+
+  return archivos;
+}
+
+function mostrarModalEnviando() {
+  const modalEnvio = document.getElementById("modalEnvio");
+  const modalLogo = document.getElementById("modalLogo");
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const progressBar = document.getElementById("progressBar");
+  const radicadoBox = document.getElementById("radicadoBox");
+  const btnAceptarModal = document.getElementById("btnAceptarModal");
+
+  modalEnvio.classList.add("active");
+  modalLogo.style.display = "inline-block";
+  modalIcon.style.display = "none";
+  modalIcon.textContent = "✓";
+  modalTitle.textContent = "Enviando información";
+  modalText.textContent = "Preparando envío de documentos...";
+  progressBar.style.display = "block";
+  radicadoBox.classList.add("hidden");
+  btnAceptarModal.classList.add("hidden");
+}
+
+function mostrarModalExito(radicado) {
+  const modalLogo = document.getElementById("modalLogo");
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const progressBar = document.getElementById("progressBar");
+  const radicadoBox = document.getElementById("radicadoBox");
+  const numeroRadicado = document.getElementById("numeroRadicado");
+  const btnAceptarModal = document.getElementById("btnAceptarModal");
+
+  modalLogo.style.display = "none";
+  modalIcon.style.display = "flex";
+  modalIcon.textContent = "✓";
+  modalTitle.textContent = "Reporte enviado correctamente";
+  modalText.textContent = "El reporte fue radicado exitosamente.";
+  progressBar.style.display = "none";
+  numeroRadicado.textContent = radicado;
+  radicadoBox.classList.remove("hidden");
+  btnAceptarModal.classList.remove("hidden");
+}
+
+function mostrarModalError(mensaje) {
+  const modalLogo = document.getElementById("modalLogo");
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const progressBar = document.getElementById("progressBar");
+  const radicadoBox = document.getElementById("radicadoBox");
+  const btnAceptarModal = document.getElementById("btnAceptarModal");
+
+  modalLogo.style.display = "none";
+  modalIcon.style.display = "flex";
+  modalIcon.textContent = "!";
+  modalTitle.textContent = "No fue posible enviar el reporte";
+  modalText.textContent = mensaje || "Revise su conexión e intente nuevamente.";
+  progressBar.style.display = "none";
+  radicadoBox.classList.add("hidden");
+  btnAceptarModal.classList.remove("hidden");
+}
+
+function mostrarModalArchivoGrande(archivo, maxMB) {
+  const modalEnvio = document.getElementById("modalEnvio");
+  const modalLogo = document.getElementById("modalLogo");
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const progressBar = document.getElementById("progressBar");
+  const radicadoBox = document.getElementById("radicadoBox");
+  const btnAceptarModal = document.getElementById("btnAceptarModal");
+
+  const pesoMB = (archivo.size / 1024 / 1024).toFixed(2);
+
+  modalEnvio.classList.add("active");
+  modalLogo.style.display = "none";
+  modalIcon.style.display = "flex";
+  modalIcon.textContent = "!";
+  modalTitle.textContent = "Archivo demasiado grande";
+  modalText.innerHTML =
+    `El archivo<br>` +
+    `<strong>"${archivo.name}"</strong> pesa ${pesoMB} MB.<br><br>` +
+    `El tamaño máximo permitido por archivo es de ${maxMB} MB.<br><br>` +
+    `Seleccione un archivo más pequeño.`;
+  progressBar.style.display = "none";
+  radicadoBox.classList.add("hidden");
+  btnAceptarModal.classList.remove("hidden");
+}
+
+document.getElementById("lineaEticaForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  if (autorizaDatos.value === "No") {
+    alertaPrivacidad.style.display = "block";
+    btnEnviar.disabled = true;
+    return;
+  }
+
+  if (cuentaEvidencias.value === "Sí") {
+    const inputsAnexos = obtenerInputsAnexos();
+
+    for (const input of inputsAnexos) {
+      if (!validarTamanoArchivo(input, true)) {
+        return;
+      }
+    }
+  }
+
+  envioExitosoLineaEtica = false;
+  btnEnviar.disabled = true;
+  mostrarModalEnviando();
+
+  try {
+    const formData = new FormData(this);
+    const archivos = cuentaEvidencias.value === "Sí" ? await obtenerArchivosFormulario() : [];
+
+    const payload = {
+      suministroDatos: obtenerValorFormulario(formData, "suministra_datos_reportante"),
+      nombresApellidos: obtenerValorFormulario(formData, "nombres_apellidos"),
+      correoElectronico: obtenerValorFormulario(formData, "correo_electronico"),
+      relacionContractual: obtenerValorFormulario(formData, "relacion_contractual"),
+      tipoContraparte: obtenerValorFormulario(formData, "tipo_contraparte"),
+      vecesReportado: obtenerValorFormulario(formData, "veces_reportado"),
+      tipoSituacion: obtenerValorFormulario(formData, "tipo_situacion"),
+      fechaSituacion: obtenerValorFormulario(formData, "fecha_situacion"),
+      motivo: obtenerValorFormulario(formData, "motivo_situacion"),
+      otroMotivo: obtenerValorFormulario(formData, "otro_motivo"),
+      descripcion: obtenerValorFormulario(formData, "descripcion_denuncia"),
+      comoSeEntero: obtenerValorFormulario(formData, "como_se_entero"),
+      otroComoSeEntero: obtenerValorFormulario(formData, "otro_como_se_entero"),
+      impactoFinanciero: obtenerValorFormulario(formData, "impacto_financiero"),
+      situacionContinua: obtenerValorFormulario(formData, "situacion_continua"),
+      conoceDenunciado: obtenerValorFormulario(formData, "conoce_denunciado"),
+      nombreDenunciado: obtenerValorFormulario(formData, "nombre_denunciado"),
+      cargoDenunciado: obtenerValorFormulario(formData, "cargo_denunciado"),
+      autorizaDatos: obtenerValorFormulario(formData, "autoriza_datos"),
+      cuentaEvidencias: obtenerValorFormulario(formData, "cuenta_evidencias"),
+      archivos
+    };
+
+    const respuesta = await fetch(API_LINEA_ETICA_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const resultado = await respuesta.json();
+
+    if (!respuesta.ok || !resultado.ok) {
+      throw new Error(resultado.mensaje || "El servidor no pudo guardar el reporte.");
+    }
+
+    envioExitosoLineaEtica = true;
+    mostrarModalExito(resultado.radicado);
+  } catch (error) {
+    console.error("Error enviando reporte:", error);
+    mostrarModalError(error.message || "Ocurrió un error interno al enviar el reporte.");
+  } finally {
+    btnEnviar.disabled = false;
+  }
+});
+
+  window.cerrarModalEnvio = function () {
+    const modalEnvio = document.getElementById("modalEnvio");
+    if (modalEnvio) modalEnvio.classList.remove("active");
+
+    if (envioExitosoLineaEtica) {
+      window.location.replace(window.location.origin + window.location.pathname);
+    }
+  };
+</script>
+<div class="modal-overlay" id="modalEnvio">
+  <div class="modal-card" id="modalCard">
+    <img src="Logo.png" alt="Consultores Martín S.A.S." class="modal-logo" id="modalLogo">
+
+    <div class="modal-icon" id="modalIcon">✓</div>
+
+    <div class="modal-title" id="modalTitle">
+      Enviando información
+    </div>
+
+    <div class="modal-text" id="modalText">
+      Preparando envío de documentos...
+    </div>
+
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill"></div>
+    </div>
+
+    <div class="radicado-box hidden" id="radicadoBox">
+      <small>Radicado</small>
+      <span id="numeroRadicado"></span>
+    </div>
+    <button
+    type="button"
+    class="modal-btn hidden"
+    id="btnAceptarModal"
+    onclick="cerrarModalEnvio()">
+    Aceptar
+</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btnAceptarModal = document.getElementById("btnAceptarModal");
+
+    if (btnAceptarModal) {
+      btnAceptarModal.addEventListener("click", function () {
+        if (typeof window.cerrarModalEnvio === "function") {
+          window.cerrarModalEnvio();
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
